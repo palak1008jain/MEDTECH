@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Register</h2>
+
+    <!-- Horizontal selection for Doctor and Patient -->
+    <div class="role-selection">
+        <div class="role-option" id="patientOption" onclick="selectRole('patient')">Patient</div>
+        <div class="role-option" id="doctorOption" onclick="selectRole('doctor')">Doctor</div>
+    </div>
+
+    <form id="registerForm">
+        <!-- Common Fields for both -->
+        <input type="text" placeholder="Full Name" required><br>
+
+        <!-- Email (Changes based on role) -->
+        <div id="emailField">
+            <input type="email" placeholder="Email" required><br>
+        </div>
+
+        <!-- Doctor's Additional Fields (Department Specialization) -->
+        <div id="doctorFields" style="display: none;">
+            <input type="email" placeholder="Official Email" id="officialEmail"><br>
+
+            <label for="department">Area of Specialization:</label><br>
+            <select id="department" name="department">
+                <option value="cardiology">Cardiology</option>
+                <option value="neurology">Neurology</option>
+                <option value="orthopedics">Orthopedics</option>
+                <option value="pediatrics">Pediatrics</option>
+                <option value="radiology">Radiology</option>
+                <option value="surgery">Surgery</option>
+                <option value="dermatology">Dermatology</option>
+            </select><br><br>
+        </div>
+
+        <!-- Password Fields -->
+        <input type="password" placeholder="Create Password" required><br>
+        <input type="password" placeholder="Confirm Password" required><br>
+
+        <!-- Fingerprint Scan -->
+        <label for="fingerprint">Scan your fingerprint:</label><br>
+        <input type="button" value="Scan Fingerprint" id="fingerprintBtn"><br><br>
+        <div id="result"></div>
+        <img id="fingerprintImage" src="" alt="Scanned Fingerprint" style="display:none;"><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<script src="register.js"></script>
+</body>
+</html>

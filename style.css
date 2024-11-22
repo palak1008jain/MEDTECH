@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url(./bghospital.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  
+  header{
+  
+    background-color: rgba(0, 0, 255, 0.673);
+    padding: 20px;
+}
+.logo{
+ 
+    display: inline-block;
+    width: 100px;
+    background-color: white;
+    margin-left: 30px;
+    font-size: larger;
+}
+.navbar{
+ 
+    display: inline-block;
+    position: absolute;
+    width: 500px;
+    right: 20px;
+    padding: 5px;
+
+}
+a{
+    margin: 20px;
+    color: black;
+    background-color: white;
+    font-size: larger;
+    padding: 10px;
+    border-radius: 10px;
+}
+a:hover{
+    background-color: rgb(167, 206, 155);
+   
+}
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #login {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #login-form label, #login-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  #login-form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #45a049;
+  }
+  
+  #hospital, #patient-history {
+    padding: 20px;
+    width: 700px;
+   
+    background-color: whitesmoke;
+  }
+  
+  #filter, #prescription-upload {
+    margin: 20px 0;
+  }
+  .container{
+
+   margin: auto;
+   margin-top: 150px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    
+    max-width: 100%;  
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-wrap: break-word; 
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="Date"] ,input[type="file"]{
+  padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: auto;
+  }
+
+
+  #patientOption{
+    
+    display: inline-block;
+    padding: 5px;
+  }
+  #doctorOption{
+    padding: 5px;
+    display: inline-block;
+  }
+ 
+  .role-option.selected {
+    background-color: blue;
+    color: white;
+}
+section#fingerprint-auth {
+  background-color:whitesmoke;
+ 
+  position: absolute;
+  width: 400px;
+  margin: auto;
+  padding: 20px;
+  right:0px;
+  top:0px;
+}
+.hospitalbg{
+  background-color:whitesmoke;
+background-size: contain;
+}

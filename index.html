@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical History Management Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class = "logo">MEDTECH</div>
+        <div class = "navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Register</a>
+        </div>
+    </header>
+  <!-- Login Section -->
+  <section id="login">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <button type="submit">Login</button>
+      </form>
+      <div class="register-link">
+        <p>New User? <a href="register.html">Register</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Handle login submission
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form from submitting normally
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const domain = email.split('@')[1]; // Extract the domain from the email
+
+      // Check if email domain is 'igdtuw.ac.in'
+      if (domain === 'igdtuw.ac.in') {
+        // Redirect to hospital.html if the domain matches
+        window.location.href = 'hospital.html';
+      } else {
+        // Redirect to patient.html for other domains
+        window.location.href = 'patient.html';
+      }
+    });
+  </script>
+</body>
+</html>

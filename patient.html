@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Medical History</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="patient-history">
+    <h2>Your Medical History</h2>
+    <div id="medical-records">
+      <!-- Patient medical history details will be dynamically inserted here -->
+    </div>
+
+    <h3>Upload Prescription</h3>
+    <input type="file" id="prescription-upload" accept="image/*">
+
+    <!-- Fingerprint Scan (ADDED) -->
+    <label for="fingerprint">Scan Fingerprint for Prescription:</label><br>
+    <input type="button" value="Scan Fingerprint" id="prescriptionFingerprintBtn"><br><br>
+    
+    <button onclick="authenticateFingerprint()">Submit Prescription</button>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    // Fingerprint scanning logic (ADDED)
+    document.getElementById('prescriptionFingerprintBtn').addEventListener('click', async function() {
+      try {
+        // Request USB device (fingerprint scanner)
+        const device = await navigator.usb.requestDevice({
+          filters: [{ vendorId: 0x1234 }]  // Replace with your scanner's vendorId
+        });
+
+        await device.open(); // Open device
+        await device.selectConfiguration(1); // Select configuration
+        await device.claimInterface(0); // Claim interface
+
+        const data = new Uint8Array(64);  // Modify based on scanner's output size
+        const result = await device.transferIn(1, data.length);
+
+        if (result.data) {
+          const fingerprint = result.data.buffer; // Capture fingerprint data
+          // Display fingerprint
+          alert("Fingerprint captured successfully!");
+          // Optionally display image or further processing
+        }
+      } catch (error) {
+        alert("Error: " + error.message);
+      }
+    });
+  </script>
+</body>
+</html>
